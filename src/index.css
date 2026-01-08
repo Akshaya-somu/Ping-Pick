@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* PharmaPing - Calm Healthcare Palette */
+    --background: 180 20% 99%;
+    --foreground: 200 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+
+    /* Teal - Trust & Healthcare */
+    --primary: 174 58% 39%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 174 45% 95%;
+    --primary-glow: 174 58% 50%;
+
+    /* Warm Cream Secondary */
+    --secondary: 40 30% 96%;
+    --secondary-foreground: 200 25% 20%;
+
+    /* Muted Grays */
+    --muted: 200 15% 95%;
+    --muted-foreground: 200 10% 45%;
+
+    /* Accent - Soft Blue */
+    --accent: 200 60% 94%;
+    --accent-foreground: 200 60% 30%;
+
+    /* Emergency - Coral Red */
+    --destructive: 4 80% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --emergency: 4 80% 58%;
+    --emergency-soft: 4 80% 96%;
+
+    /* Success - Soft Green */
+    --success: 152 55% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 152 45% 94%;
+
+    /* Warning - Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-soft: 38 80% 95%;
+
+    /* Reserved - Purple */
+    --reserved: 270 50% 55%;
+    --reserved-soft: 270 50% 96%;
+
+    --border: 200 20% 90%;
+    --input: 200 20% 90%;
+    --ring: 174 58% 39%;
+
+    --radius: 0.75rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(200 20% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(200 20% 15% / 0.07), 0 2px 4px -2px hsl(200 20% 15% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(200 20% 15% / 0.08), 0 4px 6px -4px hsl(200 20% 15% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(200 20% 15% / 0.1), 0 8px 10px -6px hsl(200 20% 15% / 0.05);
+    --shadow-glow: 0 0 20px hsl(174 58% 39% / 0.15);
+    --shadow-emergency: 0 0 20px hsl(4 80% 58% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 200 25% 20%;
+    --sidebar-primary: 174 58% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 174 45% 95%;
+    --sidebar-accent-foreground: 174 58% 30%;
+    --sidebar-border: 200 20% 92%;
+    --sidebar-ring: 174 58% 39%;
+  }
+
+  .dark {
+    --background: 200 25% 8%;
+    --foreground: 180 15% 95%;
+
+    --card: 200 25% 10%;
+    --card-foreground: 180 15% 95%;
+
+    --popover: 200 25% 10%;
+    --popover-foreground: 180 15% 95%;
+
+    --primary: 174 55% 50%;
+    --primary-foreground: 200 25% 8%;
+    --primary-soft: 174 40% 15%;
+    --primary-glow: 174 55% 60%;
+
+    --secondary: 200 20% 15%;
+    --secondary-foreground: 180 15% 90%;
+
+    --muted: 200 20% 18%;
+    --muted-foreground: 200 15% 60%;
+
+    --accent: 200 40% 20%;
+    --accent-foreground: 200 60% 80%;
+
+    --destructive: 4 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --emergency: 4 70% 50%;
+    --emergency-soft: 4 60% 15%;
+
+    --success: 152 50% 40%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 152 40% 15%;
+
+    --warning: 38 80% 45%;
+    --warning-foreground: 0 0% 100%;
+    --warning-soft: 38 60% 15%;
+
+    --reserved: 270 45% 50%;
+    --reserved-soft: 270 40% 15%;
+
+    --border: 200 20% 20%;
+    --input: 200 20% 20%;
+    --ring: 174 55% 50%;
+
+    --sidebar-background: 200 25% 10%;
+    --sidebar-foreground: 180 15% 90%;
+    --sidebar-primary: 174 55% 50%;
+    --sidebar-primary-foreground: 200 25% 8%;
+    --sidebar-accent: 174 40% 15%;
+    --sidebar-accent-foreground: 174 55% 70%;
+    --sidebar-border: 200 20% 18%;
+    --sidebar-ring: 174 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
+  }
+
+  .status-available {
+    @apply bg-success-soft text-success border border-success/20;
+  }
+
+  .status-reserved {
+    @apply bg-reserved-soft text-reserved border border-reserved/20;
+  }
+
+  .status-emergency {
+    @apply bg-emergency-soft text-emergency border border-emergency/20;
+  }
+
+  .status-expired {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+
+  .ping-pulse {
+    animation: ping-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .emergency-glow {
+    box-shadow: var(--shadow-emergency);
+    animation: emergency-pulse 1.5s ease-in-out infinite;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--primary-soft)) 0%, hsl(var(--background)) 50%, hsl(var(--accent)) 100%);
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+  }
+
+  .gradient-emergency {
+    background: linear-gradient(135deg, hsl(var(--emergency)) 0%, hsl(4 80% 65%) 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes ping-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes emergency-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px hsl(4 80% 58% / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px hsl(4 80% 58% / 0.4);
+  }
+}
