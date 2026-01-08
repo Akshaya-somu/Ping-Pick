@@ -1,4 +1,4 @@
-# 📱 Ping&Pick
+# ⚕️Ping&Pick
 
 **Ping nearby pharmacies. Pick medicines faster.**
 
