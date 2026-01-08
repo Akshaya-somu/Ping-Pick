@@ -196,13 +196,13 @@ Ping&Pick solves these challenges through a **hybrid discovery model**:
 ## 📌 Project Status
 
 🚧 **Prototype / MVP-ready**  
+https://ping-pick.web.app
 Designed for real-world constraints, rural inclusion, and emergency scenarios.
 
 ---
 
 ## 🤝 Contributions
 
-This project is under active development.  
 Suggestions and improvements are welcome.
 
 ---
